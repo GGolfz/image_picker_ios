@@ -111,10 +111,10 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 - (UIView *)addBackView {
     if (!_addBackView) {
         _addBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        [_addBackView backgroundColor:[UIColor whiteColor]]
         [_addBackView addSubview:self.addIconLabel];
         [_addBackView addSubview:self.addTitleLabel];
         _addBackView.hidden = YES;
+        _addBackView.backgroundColor = [UIColor whiteColor]
     }
     return _addBackView;
 }
