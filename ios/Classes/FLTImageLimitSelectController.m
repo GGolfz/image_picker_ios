@@ -37,7 +37,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
     if (self = [super initWithFrame:frame]) {
         self.contentView.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:self.imageView];
-        [self.contentView addSubview:self.addBackView];
+//        [self.contentView addSubview:self.addBackView];
         [self.contentView addSubview:self.selectedIcon];
         if (!cellImageCache) cellImageCache = @{}.mutableCopy;
     }
