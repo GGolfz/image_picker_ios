@@ -125,7 +125,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
         _addTitleLabel.textAlignment = NSTextAlignmentCenter;
         _addTitleLabel.font = [UIFont systemFontOfSize:12];
         _addTitleLabel.numberOfLines = 0;
-        _addTitleLabel.text = @"Edited\nSelected\nPhotos";
+        _addTitleLabel.text = @"Edit\nSelected\nPhotos";
     }
     return _addTitleLabel;
 }
