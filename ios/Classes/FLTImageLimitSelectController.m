@@ -114,7 +114,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
         [_addBackView addSubview:self.addIconLabel];
         [_addBackView addSubview:self.addTitleLabel];
         _addBackView.hidden = YES;
-        _addBackView.backgroundColor = [UIColor whiteColor]
+        _addBackView.backgroundColor = [UIColor whiteColor];
     }
     return _addBackView;
 }
@@ -122,7 +122,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 //添加的加号
 - (UILabel *)addIconLabel {
     if (!_addIconLabel) {
-        _addIconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.frame.size.width, 30)];
+        _addIconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.frame.size.width, 20)];
         _addIconLabel.textColor = [UIColor blackColor];
         _addIconLabel.textAlignment = NSTextAlignmentCenter;
         _addIconLabel.font = [UIFont systemFontOfSize:30];
@@ -134,12 +134,12 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 //添加提示
 - (UILabel *)addTitleLabel {
     if (!_addTitleLabel) {
-        _addTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.addIconLabel.frame) + 5, self.frame.size.width - 20, 50)];
+        _addTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.addIconLabel.frame) + 5, self.frame.size.width - 20, 60)];
         _addTitleLabel.textColor = [UIColor blackColor];
         _addTitleLabel.textAlignment = NSTextAlignmentCenter;
-        _addTitleLabel.font = [UIFont systemFontOfSize:14];
+        _addTitleLabel.font = [UIFont systemFontOfSize:12];
         _addTitleLabel.numberOfLines = 0;
-        _addTitleLabel.text = @"Edited Selected Photos";
+        _addTitleLabel.text = @"Edited\nSelected\nPhotos";
     }
     return _addTitleLabel;
 }
