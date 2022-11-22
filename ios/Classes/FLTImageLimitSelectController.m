@@ -144,8 +144,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 
 @end
 
-#define ToolbarHeight 55 //顶部工具栏高度
-#define BottombarHeight 110 //底部权限提示高度
+#define ToolbarHeight 55
 
 @interface FLTImageLimitSelectController ()<UICollectionViewDelegate, UICollectionViewDataSource, PHPhotoLibraryChangeObserver>
 
@@ -231,7 +230,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
     layout.minimumInteritemSpacing = 2;
     layout.sectionHeadersPinToVisibleBounds = YES;
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, ToolbarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - ToolbarHeight - BottombarHeight - [self safeAreaBottom]) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, ToolbarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - ToolbarHeight - [self safeAreaBottom]) collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -312,7 +311,7 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.allAssets.count + 1;
+    return self.allAssets.count;
 }
 
 //cell
