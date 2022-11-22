@@ -18,7 +18,6 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 //22 * 22
 //添加按钮配置
 @property (nonatomic, strong) UIView *addBackView;
-@property (nonatomic, strong) UILabel *addIconLabel;
 @property (nonatomic, strong) UILabel *addTitleLabel;
 
 //选中框
@@ -111,7 +110,6 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
 - (UIView *)addBackView {
     if (!_addBackView) {
         _addBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        [_addBackView addSubview:self.addIconLabel];
         [_addBackView addSubview:self.addTitleLabel];
         _addBackView.hidden = YES;
         _addBackView.backgroundColor = [UIColor whiteColor];
@@ -119,22 +117,10 @@ NSMutableDictionary<PHAsset *, UIImage *> *cellImageCache;
     return _addBackView;
 }
 
-//添加的加号
-- (UILabel *)addIconLabel {
-    if (!_addIconLabel) {
-        _addIconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.frame.size.width, 20)];
-        _addIconLabel.textColor = [UIColor blackColor];
-        _addIconLabel.textAlignment = NSTextAlignmentCenter;
-        _addIconLabel.font = [UIFont systemFontOfSize:30];
-        _addIconLabel.text = @"+";
-    }
-    return _addIconLabel;
-}
-
 //添加提示
 - (UILabel *)addTitleLabel {
     if (!_addTitleLabel) {
-        _addTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.addIconLabel.frame) + 5, self.frame.size.width - 20, 60)];
+        _addTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.frame.size.width - 20, self.frame.size.height - 20)];
         _addTitleLabel.textColor = [UIColor blackColor];
         _addTitleLabel.textAlignment = NSTextAlignmentCenter;
         _addTitleLabel.font = [UIFont systemFontOfSize:12];
